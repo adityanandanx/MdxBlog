@@ -1,1 +1,1 @@
-export const featuredPost = "design-systems-web-development";
+export const featuredPost = "user-research-ux-design";

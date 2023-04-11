@@ -35,7 +35,6 @@ export async function getPost(slug :string) {
 
 export async function getAllPostsPreview() {
     const postsDirectory = path.join(process.cwd(), "data", "posts");
-    // console.log(postsDirectory);
     
     const postFilePaths = (await fs.readdir(postsDirectory)).filter(postFilePath => {
         return path.extname(postFilePath).toLowerCase() === '.mdx';
@@ -44,8 +43,6 @@ export async function getAllPostsPreview() {
     const postPreviews: PostPreview[] = []
 
     for (const postFilePath of postFilePaths) {
-        console.log(postFilePath);
-        
         const postFile = await fs.readFile(
             path.join(postsDirectory, postFilePath)
         );
