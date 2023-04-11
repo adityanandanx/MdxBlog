@@ -46,7 +46,7 @@ export default function Nav() {
         <nav
             className={`
                     w-full max-w-5xl whitespace-nowrap m-auto transform py-4 mb-5 border-b bg-white border-b-slate-200 sticky z-50 left-0 top-0 transition-all duration-100 
-                    ${hasScrolled ? "border-b border-gray-900 shadow-sm" : ""}
+                    ${hasScrolled ? "border-b border-gray-900 shadow-sm" : null}
                     ${isHidden ? "-translate-y-full" : "translate-y-0"}
                 `}
         >
@@ -96,7 +96,7 @@ export default function Nav() {
                     >
                         Talk!
                     </ButtonLink> */}
-                    <Button>Let's talk!</Button>
+                    <Button>Let&lsquo;s talk!</Button>
                 </li>
             </ul>
         </nav>

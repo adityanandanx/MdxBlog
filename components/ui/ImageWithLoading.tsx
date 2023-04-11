@@ -18,6 +18,7 @@ const ImageWithLoading: FC<ImageWithLoadingProps> = ({
     width,
     height,
     className,
+    alt,
     ...props
 }) => {
     const [loaded, setLoaded] = useState(false);
@@ -28,6 +29,7 @@ const ImageWithLoading: FC<ImageWithLoadingProps> = ({
                     onLoadingComplete={() => setLoaded(true)}
                     width={width}
                     height={height}
+                    alt={alt && " "}
                     className={cn("relative", className)}
                     {...props}
                 />
