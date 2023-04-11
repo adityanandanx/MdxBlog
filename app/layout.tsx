@@ -17,7 +17,7 @@ const roboto_mono = Roboto_Mono({
 
 export const metadata = {
     title: "Blog",
-    description: "Real time chat app written in next js 13",
+    description: "Blog app made with next js 13",
 };
 
 export default function RootLayout({
