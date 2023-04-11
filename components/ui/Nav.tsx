@@ -63,7 +63,7 @@ export default function Nav() {
                                 width={(81 * 2) / 3}
                                 height={(48 * 2) / 3}
                             />
-                            <h1 className="hidden md:block">Aditya Nandan</h1>
+                            {/* <h1 className="hidden md:block">Aditya Nandan</h1> */}
                         </Link>
                     </li>
                     <div className="hidden sm:flex gap-5 items-center justify-between text-sm font-medium">
