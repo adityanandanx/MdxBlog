@@ -89,13 +89,13 @@ export default function Nav() {
                         </li>
                     </div>
                 </div>
-                <li className="flex justify-end">
-                    {/* <ButtonLink
-                        link={"#contact-section"}
-                        variant={btnType.PRIMARY}
+                <li className="flex justify-end gap-3">
+                    <Link
+                        target="_blank"
+                        href={"https://github.com/iMADi-ARCH/MdxBlog"}
                     >
-                        Talk!
-                    </ButtonLink> */}
+                        <Button variant={"secondary"}>Github</Button>
+                    </Link>
                     <Button>Let&lsquo;s talk!</Button>
                 </li>
             </ul>
