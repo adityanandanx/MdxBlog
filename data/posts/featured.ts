@@ -1,0 +1,1 @@
+export const featuredPost = "design-systems-web-development";
