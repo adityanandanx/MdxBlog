@@ -1,9 +1,11 @@
 import FeaturedPostPreview from "@/components/ui/FeaturedPostPreview";
 import PostPreviewCard from "@/components/ui/PostPreviewCard";
+import SearchBar from "@/components/ui/SearchBar";
 import { getAllPosts, getFeaturedPost } from "@/lib/postUtils";
 
 export default async function Home() {
     const posts = await getAllPosts();
+
     const featuredPost = await getFeaturedPost();
 
     return (
@@ -17,14 +19,3 @@ export default async function Home() {
         </main>
     );
 }
-// import { FC } from 'react'
-
-// interface pageProps {
-
-// }
-
-// const page: FC<pageProps> = ({}) => {
-//   return <div>page</div>
-// }
-
-// export default page

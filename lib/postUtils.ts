@@ -88,3 +88,23 @@ export async function getPostsByTag(tag: string) {
     }
     return taggedPosts;
 }
+
+export async function getPostsByTitle(title: string) {
+    const posts = await getAllPosts();
+    const titledPosts: Post[] = [];
+    for (const post of posts) {
+        if (post.frontmatter.title.toLowerCase().includes(title.toLowerCase())) {
+            titledPosts.push(post);
+        }
+    }
+    return titledPosts;
+}
+
+export async function getAllTags() {
+    const posts = await getAllPosts();
+    const tags: Set<string> = new Set();
+    for(const post of posts) {
+        post.frontmatter.tags.map(tag => tags.add(tag));
+    }
+    return tags;
+}

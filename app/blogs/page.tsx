@@ -1,10 +1,10 @@
 import PostPreviewCard from "@/components/ui/PostPreviewCard";
-import { getAllPosts, getPostsByTag } from "@/lib/postUtils";
+import { getAllPosts, getPostsByTitle, getPostsByTag } from "@/lib/postUtils";
 import { Post } from "@/lib/types/posts";
 import { FC } from "react";
 
 interface BlogsProps {
-    searchParams?: { tag?: string };
+    searchParams?: { tag?: string; title?: string };
 }
 
 const Blogs = async ({ searchParams }: BlogsProps) => {
@@ -13,6 +13,9 @@ const Blogs = async ({ searchParams }: BlogsProps) => {
     if (searchParams?.tag) {
         const { tag } = searchParams;
         posts = await getPostsByTag(tag);
+    } else if (searchParams?.title) {
+        const { title } = searchParams;
+        posts = await getPostsByTitle(title);
     } else {
         posts = await getAllPosts();
     }
