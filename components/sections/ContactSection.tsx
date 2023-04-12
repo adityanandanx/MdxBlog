@@ -19,7 +19,7 @@ const ContactSection: FC<ContactSectionProps> = ({}) => {
                 />
             </div>
             <div className="flex flex-col gap-10 items-center lg:items-stretch py-16 lg:px-16 px-0">
-                <H1>Let's have a chat!</H1>
+                <H1>Let&lsquo;s have a chat!</H1>
                 <ContactForm className="" />
             </div>
         </div>
