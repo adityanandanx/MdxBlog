@@ -14,7 +14,7 @@ const TagBar = ({ tags, maxNumber = 10 }: TagBarProps) => {
     _tags = _tags.slice(0, maxNumber);
     return (
         <div className="w-full">
-            <Tags className="justify-center items-center" tags={_tags} />
+            <Tags className="justify-center" tags={_tags} />
         </div>
     );
 };
