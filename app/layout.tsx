@@ -18,9 +18,38 @@ const roboto_mono = Roboto_Mono({
     display: "swap",
 });
 
+// export const metadata = {
+//     title: "Blog",
+//     description: "Blog app made with next js 13",
+// };
+
+const tags = [
+    "blog",
+    "aditya nandan",
+    "developer",
+    "web",
+    "designer",
+    "ui/ux",
+    "ui",
+    "ux",
+];
+
 export const metadata = {
-    title: "Blog",
-    description: "Blog app made with next js 13",
+    title: "Aditya Nandan's Blog",
+    creator: "Aditya Nandan",
+    authors: [{ name: "Aditya Nandan" }],
+    description: "Blogs by Aditya Nandan",
+    keywords: tags,
+    applicationName: "Aditya Nandan's Blog",
+    themeColor: "#0F172A",
+    openGraph: {
+        title: "Aditya Nandan's Blog",
+        description: "Blogs by Aditya Nandan",
+        siteName: "Aditya Nandan's Blog",
+        // type: "website",
+        tags: tags,
+        images: "/meta-image.jpg",
+    },
 };
 
 export default async function RootLayout({

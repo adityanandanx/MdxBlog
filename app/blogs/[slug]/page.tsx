@@ -3,11 +3,40 @@ import Date from "@/components/ui/Date";
 import Tags from "@/components/ui/Tags";
 import { getPost } from "@/lib/postUtils";
 import { Post } from "@/lib/types/posts";
+import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
 interface BlogProps {
     params: { slug?: string };
+}
+
+export async function generateMetadata({
+    params,
+}: BlogProps): Promise<Metadata> {
+    if (!params.slug) return { title: "" };
+    const post = await getPost(params.slug);
+    const { frontmatter } = post;
+    const { title, date, description, previewImage, tags } = frontmatter;
+    return {
+        title: title,
+        creator: "Aditya Nandan",
+        authors: [{ name: "Aditya Nandan" }],
+        description: description,
+        keywords: tags,
+        applicationName: "Aditya Nandan's Blog",
+        themeColor: "#0F172A",
+        openGraph: {
+            title: title,
+            description: description,
+            siteName: "Aditya Nandan's Blog",
+            type: "article",
+            authors: "Aditya Nandan",
+            tags: tags,
+            images: previewImage,
+            publishedTime: date.toTimeString(),
+        },
+    };
 }
 
 export default async function blogs({ params }: BlogProps) {
