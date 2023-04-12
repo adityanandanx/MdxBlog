@@ -1,21 +1,23 @@
 import { cn as cn } from "@/lib/utils";
+import Link from "next/link";
 import { FC, HTMLAttributes } from "react";
 
-const Tag: FC<HTMLAttributes<HTMLSpanElement>> = ({
+const Tag: FC<HTMLAttributes<HTMLAnchorElement>> = ({
     children,
     className,
     ...props
 }) => {
     return (
-        <span
+        <Link
+            href={`/blogs?tag=${children?.toString().replaceAll(" ", "")}`}
             {...props}
             className={cn(
-                "px-2 py-1 rounded-full text-xs border capitalize",
+                "px-2 py-1 rounded-full text-xs border capitalize hover:bg-slate-500/10",
                 className
             )}
         >
             {children}
-        </span>
+        </Link>
     );
 };
 

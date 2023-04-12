@@ -1,12 +1,13 @@
-import { FC } from "react";
+import { cn } from "@/lib/utils";
+import { FC, HTMLAttributes } from "react";
 
-interface DateProps {
+interface DateProps extends HTMLAttributes<HTMLSpanElement> {
     date: Date;
 }
 
-const Date: FC<DateProps> = ({ date }) => {
+const Date: FC<DateProps> = ({ className, date, ...props }) => {
     return (
-        <span className="text-xs tracking-widest px-1 py-1 font-mono">
+        <span {...props} className={cn("text-xs tracking-widest px-1 py-1 font-mono", className)}>
             {date.toLocaleDateString()}
         </span>
     );

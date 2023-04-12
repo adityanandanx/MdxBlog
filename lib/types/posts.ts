@@ -1,4 +1,4 @@
-export type PostPreview = {
+export type PostFrontMatter = {
     title: string,
     description: string,
     previewImage: string,
@@ -7,6 +7,14 @@ export type PostPreview = {
     // author: string,
     tags: string[],
 }
+
+
+export type Post = {
+    frontmatter: PostFrontMatter,
+    content: React.ReactNode,
+    readingTimeText?: string,
+}
+
 
 /* 
 ---

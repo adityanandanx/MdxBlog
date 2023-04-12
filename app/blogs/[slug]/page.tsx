@@ -2,22 +2,18 @@ import Button from "@/components/ui/Button";
 import Date from "@/components/ui/Date";
 import Tags from "@/components/ui/Tags";
 import { getPost } from "@/lib/postUtils";
+import { Post } from "@/lib/types/posts";
 import Image from "next/image";
 import Link from "next/link";
 
-interface Params {
-    slug?: string;
-}
 interface BlogProps {
-    params: Params;
+    params: { slug?: string };
 }
 
 export default async function blogs({ params }: BlogProps) {
     const { slug } = params;
-    if (slug === undefined) {
-        return null;
-    }
-    const { frontmatter, content } = await getPost(slug);
+    if (!slug) return null;
+    const { frontmatter, content, readingTimeText } = await getPost(slug);
     return (
         <div className="relative">
             <Link className="absolute left-3 top-3" href={"/"}>
@@ -31,8 +27,12 @@ export default async function blogs({ params }: BlogProps) {
                     width={1024}
                     height={1024}
                 />
-                <Date date={frontmatter.date} />
-                <Tags tags={frontmatter.tags} />
+                <div className="w-full flex justify-between my-3">
+                    <Date date={frontmatter.date} />
+                    <Tags tags={frontmatter.tags} />
+                    <span className="text-sm">{readingTimeText}</span>
+                </div>
+                {/* reading time */}
 
                 <article className="flex flex-col gap-5">{content}</article>
             </div>
