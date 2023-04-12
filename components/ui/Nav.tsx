@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import Button from "./Button";
+import { MdCallMade } from "react-icons/md";
 // import Button from "./Button";
 
 export default function Nav() {
@@ -66,11 +67,11 @@ export default function Nav() {
                             {/* <h1 className="hidden md:block">Aditya Nandan</h1> */}
                         </Link>
                     </li>
-                    <div className="hidden sm:flex gap-5 items-center justify-between text-sm font-medium">
+                    {/* <div className="hidden sm:flex gap-5 items-center justify-between text-sm font-medium">
                         <li className="">
-                            <a href={"/#projects-section"} className="">
+                            <Link href={""} className="">
                                 My Projects
-                            </a>
+                            </Link>
                         </li>
                         <li className="">
                             <Link href={"/"} className="">
@@ -83,11 +84,11 @@ export default function Nav() {
                             </Link>
                         </li>
                         <li className="">
-                            <a href={"/#contact-section"} className="">
+                            <Link href={"/contact"} className="">
                                 Contact Me
-                            </a>
+                            </Link>
                         </li>
-                    </div>
+                    </div> */}
                 </div>
                 <li className="flex justify-end gap-3">
                     <Link
@@ -96,7 +97,11 @@ export default function Nav() {
                     >
                         <Button variant={"secondary"}>Github</Button>
                     </Link>
-                    <Button>Let&lsquo;s talk!</Button>
+                    <Link href={"/contact"}>
+                        <Button>
+                            Let&lsquo;s talk! <MdCallMade />
+                        </Button>
+                    </Link>
                 </li>
             </ul>
         </nav>
