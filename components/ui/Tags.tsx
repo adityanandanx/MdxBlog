@@ -27,10 +27,13 @@ interface TagsProps extends HTMLAttributes<HTMLDivElement> {
 
 const Tags: FC<TagsProps> = ({ tags, className, ...props }) => {
     return (
-        <div {...props} className={cn("flex flex-wrap gap-2", className)}>
-            {tags.map((tag, i) => (
-                <Tag key={i}>{tag}</Tag>
-            ))}
+        <div {...props} className={cn("flex", className)}>
+            <span className="text-xs px-2 py-1">Tags:</span>
+            <div className="flex flex-wrap gap-2 items-center">
+                {tags.map((tag, i) => (
+                    <Tag key={i}>{tag}</Tag>
+                ))}
+            </div>
         </div>
     );
 };

@@ -33,22 +33,30 @@ const tags = [
     "ui",
     "ux",
 ];
+const desc =
+    "Aditya Nandan is a young and aspiring developer with interest in web design and development. In these collection of blogs, he writes about web design, web development, ui/ux, and much more. Follow along with the journey of Aditya Nandan as he shares his knowledge, tips, and tricks in the world of web development.";
 
 export const metadata = {
     title: "Aditya Nandan's Blog",
     creator: "Aditya Nandan",
     authors: [{ name: "Aditya Nandan" }],
-    description: "Blogs by Aditya Nandan",
+    description: desc,
     keywords: tags,
     applicationName: "Aditya Nandan's Blog",
     themeColor: "#0F172A",
+    twitter: {
+        title: "Aditya Nandan's Blog",
+        description: desc,
+        images: "/meta-image.jpg",
+        creator: "Aditya Nandan",
+    },
     openGraph: {
         title: "Aditya Nandan's Blog",
+        type: "website",
+        url: process.env.VERCEL_URL,
+        images: "/meta-image.jpg",
         description: "Blogs by Aditya Nandan",
         siteName: "Aditya Nandan's Blog",
-        // type: "website",
-        tags: tags,
-        images: "/meta-image.jpg",
     },
 };
 
@@ -69,7 +77,6 @@ export default async function RootLayout({
                     <main className="max-w-5xl m-auto flex flex-col gap-5">
                         <SearchBar />
                         <TagBar tags={tags} />
-
                         {children}
                     </main>
                 </div>
