@@ -19,7 +19,7 @@ const ContactSection: FC<ContactSectionProps> = ({}) => {
                     height={2700 / 2}
                 />
             </div>
-            <div className="flex flex-col gap-10 items-center lg:items-stretch py-16 lg:px-16 px-0">
+            <div className="flex flex-col gap-10 items-center lg:items-stretch py-16 lg:px-16 px-8">
                 <H1>Let&lsquo;s have a chat!</H1>
                 <ContactForm className="" />
             </div>
