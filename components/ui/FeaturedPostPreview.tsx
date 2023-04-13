@@ -23,6 +23,8 @@ const FeaturedPostPreview: FC<FeaturedPostPreviewProps> = ({ post }) => {
                     width={1366}
                     height={1366}
                     alt={title}
+                    quality={50}
+                    priority
                 />
             </Link>
             <div className="flex pointer-events-none flex-col gap-2 absolute bottom-0 left-0 right-0 p-10 bg-gradient-to-t from-gray-900 to-transparent">

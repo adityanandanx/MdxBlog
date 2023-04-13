@@ -24,6 +24,7 @@ const PostPreviewCard: FC<BlogCardProps> = ({ post }) => {
                     width={448}
                     height={448}
                     alt={title}
+                    quality={5}
                 />
                 {/* date */}
                 <Date date={date} />

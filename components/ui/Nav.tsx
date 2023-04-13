@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import Button from "./Button";
 import { MdCallMade } from "react-icons/md";
 // import Button from "./Button";
+import Logo from "../../public/logo-black.svg";
 
 export default function Nav() {
     const [hasScrolled, setHasScrolled] = useState<Boolean>(false);
@@ -59,7 +60,7 @@ export default function Nav() {
                             className="flex font-Jockey font-bold text-2xl items-center gap-4"
                         >
                             <Image
-                                src={"/logo-black.svg"}
+                                src={Logo}
                                 alt="Mad Logo"
                                 width={(81 * 2) / 3}
                                 height={(48 * 2) / 3}

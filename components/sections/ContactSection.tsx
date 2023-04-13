@@ -2,6 +2,7 @@ import Image from "next/image";
 import { FC } from "react";
 import { H1 } from "../mdx/headings";
 import ContactForm from "../ContactForm";
+import Astronaut from "../../public/contact.jpg";
 
 interface ContactSectionProps {}
 
@@ -12,7 +13,7 @@ const ContactSection: FC<ContactSectionProps> = ({}) => {
             <div className="relative w-full h-full">
                 <Image
                     className="md:static h-56 object-cover lg:h-full w-full"
-                    src={"/contact.jpg"}
+                    src={Astronaut}
                     alt="astronaut on a car"
                     width={2160 / 2}
                     height={2700 / 2}
