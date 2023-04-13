@@ -45,5 +45,5 @@ export const A = ({
 };
 
 export const Li = ({ children }: LiHTMLAttributes<HTMLLIElement>) => {
-    return <li className="my-2 list-item list-disc">{children}</li>;
+    return <li className="my-2 ml-5 list-item list-disc">{children}</li>;
 };
