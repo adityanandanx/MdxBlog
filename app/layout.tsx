@@ -1,24 +1,6 @@
 import Nav from "@/components/ui/Nav";
 import "./globals.css";
-import { Inter, Roboto_Mono, Roboto_Slab } from "next/font/google";
 import Footer from "@/components/ui/Footer";
-
-const inter = Inter({
-    subsets: ["latin"],
-    variable: "--font-inter",
-    display: "swap",
-});
-
-const roboto_mono = Roboto_Mono({
-    subsets: ["latin"],
-    variable: "--font-roboto-mono",
-    display: "swap",
-});
-const roboto_slab = Roboto_Slab({
-    subsets: ["latin"],
-    variable: "--font-roboto-slab",
-    display: "swap",
-});
 
 const tags = [
     "blog",
@@ -64,7 +46,7 @@ export default async function RootLayout({
 }) {
     return (
         <html
-            className={`w-full min-h-screen h-full bg-white antialiased overflow-x-hidden ${inter.variable} ${roboto_mono.variable} ${roboto_slab.variable}`}
+            className={`w-full min-h-screen h-full bg-white antialiased overflow-x-hidden`}
             lang="en"
         >
             <body className="relative min-h-screen">
