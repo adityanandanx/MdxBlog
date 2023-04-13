@@ -55,6 +55,7 @@ export default async function blogs({ params }: BlogProps) {
                     className="h-96 object-cover"
                     width={1024}
                     height={1024}
+                    priority
                 />
                 <div className="w-full flex flex-col justify-center items-center gap-2 md:flex-row md:justify-between my-3">
                     <Date date={frontmatter.date} />

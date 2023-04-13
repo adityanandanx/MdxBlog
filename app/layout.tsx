@@ -59,11 +59,11 @@ export default async function RootLayout({
 }) {
     return (
         <html
-            className={`w-full min-h-screen h-full bg-white antialiased ${inter.variable} ${roboto_mono.variable}`}
+            className={`w-full min-h-screen h-full bg-white antialiased overflow-x-hidden ${inter.variable} ${roboto_mono.variable}`}
             lang="en"
         >
             <body className="relative min-h-screen">
-                <div className="px-5 sm:px-10 w-full h-full text-base font-Inter">
+                <div className="px-5 sm:px-10 w-full h-full text-base font-Inter overflow-x-hidden">
                     <Nav />
                     <main className="max-w-5xl m-auto flex flex-col gap-5">
                         {children}
