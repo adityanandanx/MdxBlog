@@ -58,13 +58,13 @@ export default async function blogs({ params }: BlogProps) {
                     // quality={80}
                     priority
                 />
-                <div className="w-full flex flex-col justify-center items-center gap-2 md:flex-row md:justify-between my-3">
+                <div className=" sticky top-0 left-0 w-full flex flex-col justify-center items-center gap-2 md:flex-row md:justify-between my-3">
                     <Date date={frontmatter.date} />
                     <Tags tags={frontmatter.tags} />
                     <span className="text-sm">{readingTimeText}</span>
                 </div>
 
-                <article className="">{content}</article>
+                <article className="max-w-xl mx-auto">{content}</article>
             </div>
         </div>
     );

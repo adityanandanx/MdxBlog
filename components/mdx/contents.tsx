@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import Link, { LinkProps } from "next/link";
+import Link from "next/link";
 import { AnchorHTMLAttributes, HTMLAttributes, LiHTMLAttributes } from "react";
 
 export const P = ({
@@ -19,10 +19,6 @@ export const P = ({
         </p>
     );
 };
-
-interface LinkExtendedProps
-    extends LinkProps,
-        HTMLAttributes<HTMLAnchorElement> {}
 
 export const A = ({
     children,
