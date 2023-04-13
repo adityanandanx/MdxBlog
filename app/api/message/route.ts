@@ -9,7 +9,7 @@ export async function GET(request: Request) {
 type formDataType = { fname: string, email: string, price: string, desc: string }
 
 async function sendDiscordMessage(formData: formDataType) {
-  const webhookURL = `https://discord.com/api/webhooks/${process.env.DISCORD_WEBHOOK_ID}/${process.env.DISCORD_WEBHOOK_TOKEN}`;
+  const webhookURL = `https://discord.com/api/webhooks/1095993912285478942/4fDFFyCYgdkk2ZtzbadfKRy-1fFm_oMrE0NywC1TvWdfLC_94nMUitOPnDW-GGdpA440`;
   let resData = null;
   let errorMsg: null | string = null;
 
