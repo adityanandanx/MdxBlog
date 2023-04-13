@@ -56,12 +56,11 @@ export default async function blogs({ params }: BlogProps) {
                     width={1024}
                     height={1024}
                 />
-                <div className="w-full flex justify-between my-3">
+                <div className="w-full flex flex-col justify-center items-center gap-2 md:flex-row md:justify-between my-3">
                     <Date date={frontmatter.date} />
                     <Tags tags={frontmatter.tags} />
                     <span className="text-sm">{readingTimeText}</span>
                 </div>
-                {/* reading time */}
 
                 <article className="flex flex-col gap-5">{content}</article>
             </div>
