@@ -90,7 +90,7 @@ export default function Field({
                 />
             )}
 
-            <hr className="w-full border border-gray-900" />
+            <hr className="w-full border border-slate-900 dark:border-slate-50" />
             <p className="px-2 py-1 text-xs italic text-red-500 absolute top-full left-0">
                 {error ? "*" + error : ""}
             </p>

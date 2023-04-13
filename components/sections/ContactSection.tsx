@@ -9,7 +9,7 @@ interface ContactSectionProps {}
 const ContactSection: FC<ContactSectionProps> = ({}) => {
     return (
         // <div className="w-full flex flex-col justify-center items-center gap-10 mt-10 h-fit">
-        <div className="relative grid lg:grid-cols-2 w-full border-2 border-slate-900 rounded-md overflow-hidden">
+        <div className="relative grid lg:grid-cols-2 w-full border-2 border-slate-900 dark:border-slate-300 rounded-md overflow-hidden">
             <Image
                 className="md:static h-56 object-cover lg:h-full w-full"
                 src={Astronaut}
