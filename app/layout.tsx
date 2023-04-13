@@ -46,7 +46,7 @@ export default async function RootLayout({
 }) {
     return (
         <html
-            className={`w-full min-h-screen h-full bg-white antialiased overflow-x-hidden`}
+            className={`w-full min-h-screen h-full bg-white transition-colors duration-100 dark:bg-slate-950 dark:text-slate-200 antialiased overflow-x-hidden`}
             lang="en"
         >
             <body className="relative min-h-screen">

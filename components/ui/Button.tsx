@@ -7,8 +7,9 @@ const ButtonVariants = cva(
     {
         variants: {
             variant: {
-                primary: "bg-slate-900 text-slate-50",
-                secondary: "text-slate-900",
+                primary:
+                    "bg-slate-900 text-slate-50 dark:bg-slate-50 dark:text-slate-900",
+                secondary: "text-slate-900 dark:text-slate-50 bg-transparent",
             },
         },
         defaultVariants: {

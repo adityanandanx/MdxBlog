@@ -12,7 +12,7 @@ const SearchBar: FC<SearchBarProps> = () => {
             className="relative max-w-lg m-auto flex justify-center items-center"
         >
             <input
-                className="bg-slate-50 border-b border-slate-200 w-full h-full rounded-full px-5 py-3 outline-none transition-colors ring-transparent ring-2 focus:ring-slate-200"
+                className="bg-slate-50 dark:bg-slate-700 border-b border-slate-200 dark:border-slate-600 w-full h-full rounded-full px-5 py-3 outline-none transition-colors ring-transparent ring-2 focus:ring-slate-200"
                 name="title"
                 id="title"
                 type="text"
