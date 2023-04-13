@@ -8,7 +8,10 @@ export const H1 = ({
 }: HTMLAttributes<HTMLHeadingElement>) => {
     return (
         <h1
-            className={cn("text-4xl sm:text-5xl font-bold", className)}
+            className={cn(
+                "text-4xl sm:text-5xl font-black tracking-tight my-10",
+                className
+            )}
             {...props}
         >
             {children}
@@ -22,7 +25,7 @@ export const H2 = ({
     ...props
 }: HTMLAttributes<HTMLHeadingElement>) => {
     return (
-        <h2 className={cn("text-3xl font-bold", className)} {...props}>
+        <h2 className={cn("text-2xl font-bold mt-7", className)} {...props}>
             {children}
         </h2>
     );
@@ -34,7 +37,7 @@ export const H3 = ({
     ...props
 }: HTMLAttributes<HTMLHeadingElement>) => {
     return (
-        <h3 className={cn("text-2xl font-semibold", className)} {...props}>
+        <h3 className={cn("text-xl font-semibold mt-3", className)} {...props}>
             {children}
         </h3>
     );
@@ -46,7 +49,7 @@ export const H4 = ({
     ...props
 }: HTMLAttributes<HTMLHeadingElement>) => {
     return (
-        <h4 className={cn("text-xl font-medium", className)} {...props}>
+        <h4 className={cn("text-lg font-medium mt-2", className)} {...props}>
             {children}
         </h4>
     );
@@ -57,7 +60,7 @@ export const H5 = ({
     ...props
 }: HTMLAttributes<HTMLHeadingElement>) => {
     return (
-        <h5 className={cn("text-lg font-normal", className)} {...props}>
+        <h5 className={cn("text-base font-normal mt-1", className)} {...props}>
             {children}
         </h5>
     );
@@ -68,7 +71,7 @@ export const H6 = ({
     ...props
 }: HTMLAttributes<HTMLHeadingElement>) => {
     return (
-        <h6 className={cn("text-base font-normal", className)} {...props}>
+        <h6 className={cn("text-sm font-normal", className)} {...props}>
             {children}
         </h6>
     );

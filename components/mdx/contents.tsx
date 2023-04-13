@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 import Link, { LinkProps } from "next/link";
-import { HTMLAttributes } from "react";
+import { AnchorHTMLAttributes, HTMLAttributes, LiHTMLAttributes } from "react";
 
 export const P = ({
     children,
@@ -8,28 +8,42 @@ export const P = ({
     ...props
 }: HTMLAttributes<HTMLParagraphElement>) => {
     return (
-        <h6
-            className={cn("text-base font-normal text-justify", className)}
-            {...props}
-        >
-            {children}
-        </h6>
-    );
-};
-export const A = ({
-    children,
-    className,
-    ...props
-}: HTMLAttributes<HTMLAnchorElement>) => {
-    return (
-        <a
+        <p
             className={cn(
-                "text-base font-normal text-justify underline",
+                "text-lg font-serif font-normal mb-10 leading-8 mt-2",
                 className
             )}
             {...props}
         >
             {children}
-        </a>
+        </p>
     );
+};
+
+interface LinkExtendedProps
+    extends LinkProps,
+        HTMLAttributes<HTMLAnchorElement> {}
+
+export const A = ({
+    children,
+    className,
+    href,
+    ...props
+}: AnchorHTMLAttributes<HTMLAnchorElement>) => {
+    return (
+        <Link
+            href={href || "/"}
+            className={cn(
+                "text-base font-normal text-justify underline py-4",
+                className
+            )}
+            {...props}
+        >
+            {children}
+        </Link>
+    );
+};
+
+export const Li = ({ children }: LiHTMLAttributes<HTMLLIElement>) => {
+    return <li className="my-2 list-item list-disc">{children}</li>;
 };

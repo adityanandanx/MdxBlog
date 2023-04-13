@@ -55,6 +55,7 @@ export default async function blogs({ params }: BlogProps) {
                     className="h-96 object-cover"
                     width={1024}
                     height={1024}
+                    // quality={80}
                     priority
                 />
                 <div className="w-full flex flex-col justify-center items-center gap-2 md:flex-row md:justify-between my-3">
@@ -63,7 +64,7 @@ export default async function blogs({ params }: BlogProps) {
                     <span className="text-sm">{readingTimeText}</span>
                 </div>
 
-                <article className="flex flex-col gap-5">{content}</article>
+                <article className="">{content}</article>
             </div>
         </div>
     );

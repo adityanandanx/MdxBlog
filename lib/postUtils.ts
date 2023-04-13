@@ -5,11 +5,11 @@ import { promises as fs } from "fs";
 import { compileMDX } from "next-mdx-remote/rsc";
 import { H1, H2, H3, H4, H5, H6 } from "@/components/mdx/headings";
 import { PostFrontMatter, Post } from "./types/posts";
-import { A, P } from "@/components/mdx/contents";
+import { A, Li, P } from "@/components/mdx/contents";
 import { featuredPost } from "@/data/posts/featured";
 import readingTime from "reading-time";
 
-export async function getPost(slug :string) {
+export async function getPost(slug: string) {
     const postsDirectory = path.join(process.cwd(), "data", "posts");
     const postFilePath = path.join(postsDirectory, `${slug}.mdx`);
     const postFile = await fs.readFile(postFilePath);
@@ -26,13 +26,14 @@ export async function getPost(slug :string) {
             h6: H6,
             p: P,
             a: A,
+            li: Li,
         },
     });
-    
-    const stats = readingTime(postFile.toString())
+
+    const stats = readingTime(postFile.toString());
 
     frontmatter.slug = slug;
-    
+
     return {
         frontmatter: frontmatter,
         content: content,
@@ -42,12 +43,14 @@ export async function getPost(slug :string) {
 
 export async function getAllPosts() {
     const postsDirectory = path.join(process.cwd(), "data", "posts");
-    
-    const postFilePaths = (await fs.readdir(postsDirectory)).filter(postFilePath => {
-        return path.extname(postFilePath).toLowerCase() === '.mdx';
-    })
 
-    const postPreviews: Post[] = []
+    const postFilePaths = (await fs.readdir(postsDirectory)).filter(
+        (postFilePath) => {
+            return path.extname(postFilePath).toLowerCase() === ".mdx";
+        }
+    );
+
+    const postPreviews: Post[] = [];
 
     for (const postFilePath of postFilePaths) {
         const postFile = await fs.readFile(
@@ -57,17 +60,17 @@ export async function getAllPosts() {
         const { frontmatter, content } = await compileMDX({
             source: postFile,
             options: { parseFrontmatter: true },
-        })
+        });
 
-        const stats = readingTime(postFile.toString())
+        const stats = readingTime(postFile.toString());
         frontmatter.slug = postFilePath.replace(".mdx", "");
-        
+
         postPreviews.push({
             frontmatter: frontmatter,
             content: content,
             readingTimeText: stats.text,
             // slug: postFilePath.replace(".mdx", ""),
-        } as Post)
+        } as Post);
     }
     return postPreviews;
 }
@@ -82,7 +85,11 @@ export async function getPostsByTag(tag: string) {
     const posts = await getAllPosts();
     const taggedPosts: Post[] = [];
     for (const post of posts) {
-        if (post.frontmatter.tags.map(tag => tag.replaceAll(" ", "").toLowerCase()).includes(tag.replaceAll(" ", "").toLowerCase())) {
+        if (
+            post.frontmatter.tags
+                .map((tag) => tag.replaceAll(" ", "").toLowerCase())
+                .includes(tag.replaceAll(" ", "").toLowerCase())
+        ) {
             taggedPosts.push(post);
         }
     }
@@ -93,7 +100,9 @@ export async function getPostsByTitle(title: string) {
     const posts = await getAllPosts();
     const titledPosts: Post[] = [];
     for (const post of posts) {
-        if (post.frontmatter.title.toLowerCase().includes(title.toLowerCase())) {
+        if (
+            post.frontmatter.title.toLowerCase().includes(title.toLowerCase())
+        ) {
             titledPosts.push(post);
         }
     }
@@ -103,8 +112,8 @@ export async function getPostsByTitle(title: string) {
 export async function getAllTags() {
     const posts = await getAllPosts();
     const tags: Set<string> = new Set();
-    for(const post of posts) {
-        post.frontmatter.tags.map(tag => tags.add(tag));
+    for (const post of posts) {
+        post.frontmatter.tags.map((tag) => tags.add(tag));
     }
     return tags;
 }

@@ -14,8 +14,9 @@ module.exports = {
       },
 
       fontFamily: {
-        Inter: ['var(--font-inter)'],
-        mono: ['var(--font-roboto-mono)'],
+        sans: ['Inter', 'sans-serif'],
+        mono: ['Roboto Mono', 'monospace'],
+        serif: ['Roboto Slab', 'serif'],
       },
     },
   },
