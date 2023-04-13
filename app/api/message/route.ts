@@ -15,7 +15,7 @@ async function sendDiscordMessage(formData: formDataType) {
 
   fetch(webhookURL, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: { "Content-Type": "application/json", mode: 'no-cors' },
     body: JSON.stringify({
       embeds: [
         {
