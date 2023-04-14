@@ -54,7 +54,7 @@ export async function POST(request: NextRequest) {
     }
 
     // const res = await sendDiscordMessage(formData);
-    const webhookURL = `https://discord.com/api/webhooks/1095993912285478942/4fDFFyCYgdkk2ZtzbadfKRy-1fFm_oMrE0NywC1TvWdfLC_94nMUitOPnDW-GGdpA440`;
+    const webhookURL = `https://discord.com/api/webhooks/${process.env.DISCORD_WEBHOOK_ID}/${process.env.DISCORD_WEBHOOK_TOKEN}`;
 
     const res = await fetch(webhookURL, {
         method: "POST",
