@@ -87,5 +87,4 @@ visit https://localhost:3000/
 ## References
 
 -   Design inspiration from https://tx.shadcn.com/
--   Official Docs of https://beta.nextjs.org/
-
+-   Official Docs of https://beta.nextjs.org/docs/deployment) for more details.
