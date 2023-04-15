@@ -1,36 +1,91 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# MDX Blog App with Next JS 13
 
-## Getting Started
+This is a simple personal blog written with Next js 13 using the new `app/` directory and uses asynchronous server components.
 
-First, run the development server:
+_Note: the blogs currently in the `/data/posts/` directory are written by ChatGPT and are meant to be a placeholder until I get the time to actually write some._
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+## Objectives
+
+-   Learn The basics of Next js 13.
+-   Create a clean and minimalistic design with tailwind css.
+-   Learn more about Markdown
+
+## Technologies used
+
+-   [Next js 13](https://beta.nextjs.org/) - as React framework.
+-   [Typescript](https://www.typescriptlang.org/) - to write typesafe javascript.
+-   [Tailwind css](https://tailwindcss.com/) - for modular css.
+-   [React js](https://react.dev) - the component library.
+-   [Next Remote MDX](https://github.com/hashicorp/next-mdx-remote) - to compile MDX.
+
+## How it works
+
+Any file with an `.mdx` extension placed in the `./data/posts/` directory will show up as a blog post in the app which makes it really easy to add blogs without using any database.
+
+The frontmatter is also parsed which has the interface of:
+
+```ts
+interface PostFrontMatter = {
+    title: string,
+    description: string,
+    previewImage: string,
+    slug: string,
+    date: Date,
+    tags: string[],
+}
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+An example would be -
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```mdx
+---
+title: "My new blog post"
+description: "My very long description for my very long blog post"
+previewImage: /path/to/image/url.jpg
+date: 2023-04-10
+author: John Doe
+tags: [sample tag, test tag, long post]
+---
 
-[http://localhost:3000/api/hello](http://localhost:3000/api/hello) is an endpoint that uses [Route Handlers](https://beta.nextjs.org/docs/routing/route-handlers). This endpoint can be edited in `app/api/hello/route.ts`.
+# The Blog content
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur feugiat tortor vitae libero finibus venenatis...
+```
 
-## Learn More
+The `previewImage` url can be from [Unsplash](https://unsplash.com/) or can be the path of an image stored in `./public` directory.
 
-To learn more about Next.js, take a look at the following resources:
+Any non-existing tags are added automatically.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## To run locally:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Clone the repository -
 
-## Deploy on Vercel
+```
+git clone https://github.com/iMADi-ARCH/MdxBlog
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+cd into the directory -
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```
+cd MdxBlog
+```
+
+install dependencies -
+
+```
+npm install
+```
+
+run the development server -
+
+```
+npm run dev
+```
+
+visit https://localhost:3000/
+
+## References
+
+-   Design inspiration from https://tx.shadcn.com/
+-   Official Docs of https://beta.nextjs.org/
+
