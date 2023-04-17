@@ -31,11 +31,19 @@ export const metadata = {
     },
     openGraph: {
         title: "Aditya Nandan's Blog",
-        type: "website",
-        url: process.env.VERCEL_URL,
-        images: "/meta-image.jpg",
         description: "Blogs by Aditya Nandan",
+        url: process.env.VERCEL_URL,
+        type: "website",
         siteName: "Aditya Nandan's Blog",
+        images: [
+            {
+                url: "https://github.com/iMADi-ARCH/MdxBlog/blob/9d068c6fbecadb3442432171a9f63ca5c0b7a3ff/public/meta-image.jpg",
+                width: 1200,
+                height: 630,
+                alt: "Victor Williams — Frontend Engineer",
+            },
+        ],
+        locale: "en-US",
     },
 };
 
